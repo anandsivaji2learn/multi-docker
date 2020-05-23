@@ -11,7 +11,7 @@ script:
     
 after_success:
     - docker build -t anandsivaji/multi-docker-client ./client
-    - docker build -t anandsivaji/multi-docker-ngnix ./ngnix
+    - docker build -t anandsivaji/multi-docker-nginx ./nginx
     - docker build -t anandsivaji/multi-docker-server ./server
     - docker build -t anandsivaji/multi-docker-worker ./worker
     
@@ -20,7 +20,7 @@ after_success:
 
     # Take these images to the docker hub
     - docker push anandsivaji/multi-docker-client
-    - docker push anandsivaji/multi-docker-ngnix
+    - docker push anandsivaji/multi-docker-nginx
     - docker push anandsivaji/multi-docker-server
-    - docker push' anandsivaji/multi-docker-worker
+    - docker push anandsivaji/multi-docker-worker
 
