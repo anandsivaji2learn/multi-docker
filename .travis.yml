@@ -24,3 +24,15 @@ after_success:
     - docker push anandsivaji/multi-docker-server
     - docker push anandsivaji/multi-docker-worker
 
+deploy:
+    provider: elaticbeanstalk
+    region: "us-east-1"
+    app: "muti-docker"
+    env: "MultiDocker-env"
+    bucker_name: "elasticbeanstalk-us-east-1-574322318218"
+    bucket_path: "muti-docker"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
